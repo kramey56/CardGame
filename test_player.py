@@ -12,12 +12,13 @@ def test_unique():
 
 def test_hand():
     """ Verify the player gets the cards we expect on unshuffled deck """
-    
+
     player1 = player.Player(1)
     deck1 = deck.Deck()
 
-    testHand = [deck.Card("Clubs", 14), deck.Card("Clubs", 13),
-                deck.Card("Clubs", 12)]
+    testHand = [deck.Card(deck.Suits.CLUBS, 14),
+                deck.Card(deck.Suits.CLUBS, 13),
+                deck.Card(deck.Suits.CLUBS, 12)]
 
     match = True
     for _ in range(0, 3):

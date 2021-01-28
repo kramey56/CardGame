@@ -1,4 +1,11 @@
 import random
+from enum import IntEnum
+
+class Suits(IntEnum):
+    SPADES = 1
+    DIAMONDS = 2
+    HEARTS = 3
+    CLUBS = 4
 
 class Card:
     """ Represent a standard playing card
@@ -11,7 +18,7 @@ class Card:
 
     """
 
-    def __init__(self, suit, value):
+    def __init__(self, suit: Suits, value: int):
         """ Create a single card
         Args:
             suit: One of Heart, Spade, Club, Diamonds
@@ -22,7 +29,7 @@ class Card:
         self._suit = suit
         self._value = value
 
-    def getSuit(self) -> str:
+    def getSuit(self) -> Suits:
         """ Return the card's suit """
 
         return self._suit
@@ -67,7 +74,7 @@ class Deck:
     def _build(self):
         """ Create the deck of cards in sorted order by suit and value """
 
-        for s in ["Spades", "Diamonds", "Hearts", "Clubs"]:
+        for s in Suits:
             for v in range(2, 15):
                 self._cards.append(Card(s, v))
 

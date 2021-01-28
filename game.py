@@ -13,6 +13,9 @@ of the card. The player with the highest score wins.
 import deck
 import player
 
+def sort(cards: list) -> list:
+    return sorted(cards, key=lambda x: (x._suit, x._value))
+
 def score(hand: list) -> int:
     """ Calculate the score of a hand 
 
